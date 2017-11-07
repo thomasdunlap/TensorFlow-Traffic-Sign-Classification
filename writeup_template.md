@@ -134,6 +134,9 @@ If a well known architecture was chosen:
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
+I choose to use a slightly modified LeNet architecture. LeNet is an architecture I worked with in identifying handwritten numbers, and I thought it would translate well to identifying traffic signs.  The final model accuracy was !AN UNKNOWN NUMBER!, which suggests LeNet was a success.
+
+As far as some of the hyperparameters go, I just sort guessed to low, then too high, until I reached a happy medium.
 
 ### Test a Model on New Images
 
