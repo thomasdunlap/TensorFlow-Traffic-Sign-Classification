@@ -15,9 +15,9 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./examples/barplot_training.png "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
+[image3]: ./examples/barplot_after_augmentation.png "Bar plot of augmented data set"
 [image4]: ./new_images/100km_sign.jpeg "100 km/h Sign"
 [image5]: ./new_images/70km_sign.jpg "70 km/h Sign"
 [image6]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
