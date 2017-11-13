@@ -136,7 +136,7 @@ If a well known architecture was chosen:
 
 I choose to use a slightly modified LeNet architecture. LeNet is an architecture I worked with in identifying handwritten numbers, and I thought it would translate well to identifying traffic signs.  The final model accuracy was !AN UNKNOWN NUMBER!, which suggests LeNet was a success.
 
-As far as some of the hyperparameters go, I just sort guessed to low, then too high, until I reached a happy medium.
+As far as some of the hyperparameters go, I just sort guessed to low, then too high, until I reached a happy medium.  My hunch was since LeNet was trained to identify 10 numbers, and we were using it to identify 43 signs, the learning rate would need to be smaller and the number of epochs would need to be larger.  This made sense since there are more nuances to learn, and there are no real time constraints on how long it takes the model to train except my own patience.  This would hopefully help keep our Adam optimizer from getting stuck before it reached a minima.  As I'd observe the updates with each epoch, I noticed the optimizer getting "stuck" around certain numbers, and I figured if there was more room to descend down the gradient, the algorithm might be overshooting due to a too-large learning rate.
 
 ### Test a Model on New Images
 
