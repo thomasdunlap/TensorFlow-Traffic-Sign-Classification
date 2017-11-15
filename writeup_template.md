@@ -168,11 +168,11 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| Stop Sign      		| Stop sign   									|
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| 30 km/h      		| 30 km/h   									|
+| 70 km/h    			| 70 km/h 										|
+| Right Turn Ahead			| Right Turn Ahead											|
+| No Entry	      		| No Entry				 				|
+| Stop Sign			| Stop Sign     							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -185,14 +185,57 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| Stop sign   									|
-| .20     				| U-turn 										|
+| .60         			| 30 km/h Sign   									|
+| .20     				|  										|
 | .05					| Yield											|
 | .04	      			| Bumpy Road					 				|
 | .01				    | Slippery Road      							|
 
 
 For the second image ...
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .60         			| 30 km/h Sign   									|
+| .20     				|  										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
+
+
+For the third image ...
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .60         			| 30 km/h Sign   									|
+| .20     				|  										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
+
+
+For the fourth image ...
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .60         			| 30 km/h Sign   									|
+| .20     				|  										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
+
+
+For the fifth image ...
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .60         			| 30 km/h Sign   									|
+| .20     				|  										|
+| .05					| Yield											|
+| .04	      			| Bumpy Road					 				|
+| .01				    | Slippery Road      							|
+
+
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
