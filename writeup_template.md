@@ -51,7 +51,7 @@ signs data set:
 
 I used a bar chart to visualize the data set.
 
-![alt text][image1]
+![Bar Chart of Training Examples][bar_train]
 
 Of the 43 unique labels, there is a wide variance in the number of examples in each category. I also visualized a random image from the training set, like this one:
 
