@@ -88,21 +88,21 @@ My final model consisted of the following layers:
 | Input         		| 32x32x3 RGB image   							|
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|	Activation											|
-| Dropout       |  Keep Prob = .75      |
+| Dropout       |  Keep Prob = .76      |
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
 | Convolution 5x5	    | 1x1 stride, valid padding, outputs 10x10x16      									|
 | RELU					|	Activation											|
-| Dropout       |  Keep Prob = .75      |
+| Dropout       |  Keep Prob = .76      |
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
 | Flatten       | outputs 400           |
 | RELU					|		Activation										|
-| Dropout       |  Keep Prob = .75      |
+| Dropout       |  Keep Prob = .76      |
 | Fully connected		| outputs 120       |
 | RELU					|		Activation										|
-| Dropout       |  Keep Prob = .75      |
+| Dropout       |  Keep Prob = .76      |
 | Fully connected		| outputs 84       |
 | RELU					|	Activation											|
-| Dropout       |  Keep Prob = .75      |
+| Dropout       |  Keep Prob = .76      |
 | Fully connected		| outputs 43       |
 | Softmax				| outputs classification probabilities        									|
 
@@ -112,9 +112,9 @@ My final model consisted of the following layers:
 
 To train the model, I used the following hyperparameters:
 
-* Learing rate: .001
-* Dropout/Keep Probability: .75
-* Epochs: 50
+* Learing rate: .00033
+* Dropout/Keep Probability: .76
+* Epochs: 80
 * Batch size: 128
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
