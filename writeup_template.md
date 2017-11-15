@@ -15,14 +15,14 @@ The goals of this project are:
 
 [//]: # (Image References)
 
-[image1]: ./examples/barplot_training.png "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/barplot_after_augmentation.png "Bar plot of augmented data set"
-[image4]: ./new_images/100km_sign.jpeg "100 km/h Sign"
-[image5]: ./new_images/70km_sign.jpg "70 km/h Sign"
-[image6]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
-[image7]: ./new_images/children-crossing.jpg "Children Crossing Sign"
-[image8]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
+[bar_train]: ./examples/barplot_training.png "Visualization"
+[stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
+[bar_post_rot]: ./examples/barplot_after_rot.png "Bar plot of augmented data set"
+[30km_sign]: ./new_images/30km_sign.JPG "30 km/h Sign"
+[70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
+[no_entry_sign]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
+[children_crossing]: ./new_images/children-crossing.jpg "Children Crossing Sign"
+[right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -146,15 +146,15 @@ As far as some of the hyperparameters go, I just sort guessed to low, then too h
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4]
+![30km_sign][30km_sign]
 
-![alt text][image5]
+![70km_sign][70km_sign]
 
-![alt text][image6]
+![alt text][right_turn_ahead]
 
-![alt text][image7]
+![alt text][no_entry_sign]
 
-![alt text][image8]
+![alt text][stop_sign]
 
 My model had an easy time classifying NUMBER of the five signs.  To be fair, they were all cropped to look like the original images.
 
@@ -196,3 +196,6 @@ For the second image ...
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+
+
+Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
