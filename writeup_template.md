@@ -4,7 +4,7 @@
 
 **Build a Traffic Sign Recognition Project**
 
-The goals / steps of this project are the following:
+The goals of this project are:
 * Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
@@ -156,7 +156,11 @@ Here are five German traffic signs that I found on the web:
 
 ![alt text][image8]
 
-The first image might be difficult to classify because ...
+My model had an easy time classifying NUMBER of the five signs.  To be fair, they were all cropped to look like the original images.
+
+Images where the sign was rotated significantly or off-center were difficult for the model to classify.  Which makes sense, seeing as I did not train the model with those types of images.  
+
+In the future, it would probably be helpful to have larger rotations and more obscured signs.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
