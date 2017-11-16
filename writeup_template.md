@@ -183,7 +183,7 @@ Here are the results of the prediction:
 | Stop Sign			| Stop Sign     							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
@@ -204,60 +204,55 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| 30 km/h Sign   									|
-| .20     				|  										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .99770          			| 30 km/h   									|
+| .00120     				| 0 										|
+| .00053					| 3Yield											|
+| .00050	      			| 2Bumpy Road					 				|
+| .00003				    | 8Slippery Road      							|
 
 
 For the second image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| 30 km/h Sign   									|
-| .20     				|  										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .63859         			| 70 km/h  									|
+| .35192     				|  30 km/h										|
+| .00528					| 2Yield											|
+| .00156	      			| 5Bumpy Road					 				|
+| .00090				    | 3Slippery Road      							|
 
 
 For the third image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| 30 km/h Sign   									|
-| .20     				|  										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.0         			| 33  									|
+| 0     				| 40  										|
+| 0					| 16Yield											|
+| 0	      			| 4Bumpy Road					 				|
+| 0				    | 39Slippery Road      							|
 
 
 For the fourth image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| 30 km/h Sign   									|
-| .20     				|  										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.0         			| 17   									|
+| 0     				|  	9									|
+| 0					| 14Yield											|
+| 0	      			| 10Bumpy Road					 				|
+| 0				    | 20Slippery Road      							|
 
 
 For the fifth image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .60         			| 30 km/h Sign   									|
-| .20     				|  										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+| .99999         			| Stop Sign  									|
+| .00000     				| 13 										|
+| .00000					| 0											|
+| .00000	      			| 30 km/h					 				|
+| .00000				    | 10     							|
 
 
 Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
