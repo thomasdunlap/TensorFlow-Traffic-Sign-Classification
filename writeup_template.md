@@ -1,4 +1,5 @@
 # **Traffic Sign Recognition**
+![Normalized Image][norm_38] ![Stop Sign][rand_stop] ![Rotated Sign][rotated_img]
 
 ---
 
@@ -48,11 +49,11 @@ You're reading it! and here is a link to my [project code](https://github.com/th
 I used the pandas, numpy, and python to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is 34799
-* The size of the validation set is 4410
-* The size of test set is 12630
-* The shape of a traffic sign image is (32, 32, 3)
-* The number of unique classes/labels in the data set is 43
+* The size of training set is 34799.
+* The size of the validation set is 4410.
+* The size of test set is 12630.
+* The shape of a traffic sign image is (32, 32, 3).
+* The number of unique classes/labels in the data set is 43.
 
 #### Visualization of the Dataset.
 
@@ -119,17 +120,17 @@ My final model consisted of the following layers:
 
 To train the model, I used the following hyperparameters:
 
-* Learing rate: .00033
+* Learing rate: .000933
 * Dropout/Keep Probability: .76
-* Epochs: 100
+* Epochs: 80
 * Batch size: 256
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ?
-* test set accuracy of ?
+* training set accuracy: 1.000
+* validation set accuracy: .962
+* test set accuracy: .951
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -187,6 +188,17 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+
+
+![30 km/h softmax bar plot][30_bar]
+
+![70 km/h softmax bar plot][70_bar]
+
+![Right turn softmax bar plot][right_turn_bar]
+
+![No Entry softmax bar plot][no_entry_bar]
+
+![Stop sign softmax bar plot][stop_bar]
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
