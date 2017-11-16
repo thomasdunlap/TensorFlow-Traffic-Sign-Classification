@@ -26,7 +26,7 @@ The goals of this project are:
 [rand_stop]: ./examples/random_stop.png "Random Stop Sign"
 [bar_train]: ./examples/barplot_training.png "Visualization"
 [bar_after_rot]: ./examples/bar_after_rot.png "Bar plot of data set after adding rotated images"
-[random_img_38]: ./new_images/rand_img.png "Children Crossing Sign"
+[random_img_38]: ./examples/rand_img.png "Children Crossing Sign"
 [30km_sign]: ./new_images/30km_sign.JPG "30 km/h Sign"
 [70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
 [right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
@@ -63,7 +63,7 @@ I used a bar chart to visualize the data set.
 
 There is a wide variance in number of examples across the 43 types of signs. I also visualized a random image from the training set, to get a feel for what the images looked like:
 
-![random image][random_img] <= put real image.
+![random image][random_img_38] ![normed image][norm_38]
 
 ### Design and Test a Model Architecture
 
