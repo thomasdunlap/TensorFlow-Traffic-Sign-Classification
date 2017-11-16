@@ -15,13 +15,19 @@ The goals of this project are:
 
 [//]: # (Image References)
 
+[stop_bar]: ./examples/stop_bar.png "30km Bar Plot Softmax"
+[rotated_img]: ./examples/rotated_img.png "30km Bar Plot Softmax"
+[right_turn_bar]: ./examples/right_turn_bar.png "30km Bar Plot Softmax"
+[30_bar]: ./examples/30km_bar.png "30km Bar Plot Softmax"
+[70_bar]: ./examples/70km_bar.png "70km Bar Plot Softmax"
+[no_entry_bar]: ./examples/no_entry_bar.png "No Entry Softmax"
+[norm_38]: ./examples/normed_38_img.png "Normalized Image"
+[rand_stop]: ./examples/random_stop.png "Random Stop Sign"
 [bar_train]: ./examples/barplot_training.png "Visualization"
-[bar_post_rot]: ./examples/barplot_after_rot.png "Bar plot of augmented data set"
-[random_img]: ./new_images/children-crossing.jpg "Children Crossing Sign"
+[bar_after_rot]: ./examples/bar_after_rot.png "Bar plot of data set after adding rotated images"
+[random_img_38]: ./new_images/rand_img.png "Children Crossing Sign"
 [30km_sign]: ./new_images/30km_sign.JPG "30 km/h Sign"
 [70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
-[no_entry_sign]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
-
 [right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
 [stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
 
