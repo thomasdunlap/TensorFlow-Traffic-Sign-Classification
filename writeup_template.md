@@ -16,13 +16,14 @@ The goals of this project are:
 [//]: # (Image References)
 
 [bar_train]: ./examples/barplot_training.png "Visualization"
-[stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
 [bar_post_rot]: ./examples/barplot_after_rot.png "Bar plot of augmented data set"
+[random_img]: ./new_images/children-crossing.jpg "Children Crossing Sign"
 [30km_sign]: ./new_images/30km_sign.JPG "30 km/h Sign"
 [70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
 [no_entry_sign]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
-[children_crossing]: ./new_images/children-crossing.jpg "Children Crossing Sign"
+
 [right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
+[stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -32,7 +33,7 @@ The goals of this project are:
 
 #### Provide a README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/thomasdunlap/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+You're reading it! and here is a link to my [project code](https://github.com/thomasdunlap/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
 
@@ -53,9 +54,9 @@ I used a bar chart to visualize the data set.
 
 ![Bar Chart of Training Examples][bar_train]
 
-Of the 43 unique labels, there is a wide variance in the number of examples in each category. I also visualized a random image from the training set, like this one:
+There is a wide variance in number of examples across the 43 types of signs. I also visualized a random image from the training set, to get a feel for what the images looked like:
 
-![random image][image2] <= put real image.
+![random image][random_img] <= put real image.
 
 ### Design and Test a Model Architecture
 
@@ -242,3 +243,5 @@ For the fifth image ...
 
 
 Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
+
+The annoying thing about drawing from a random distribution is when you try to recreate it and its different each time! I guess that's what random seed is for, but holy mother swearing!!!
