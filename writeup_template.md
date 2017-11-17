@@ -31,6 +31,7 @@ The goals of this project are:
 [70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
 [right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
 [stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
+[no_entry]: ./examples/Do-Not-Enter_Sign.jpg "No Entry Sign"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -154,15 +155,15 @@ As far as some of the hyperparameters go, I just sort guessed to low, then too h
 
 Here are five German traffic signs that I found on the web:
 
-![30km_sign][30km_sign]
+![30km/h sign][30km_sign]
 
-![70km_sign][70km_sign]
+![70km/h sign][70km_sign]
 
-![alt text][right_turn_ahead]
+![Right Turn Ahead Sign][right_turn_ahead]
 
-![alt text][no_entry_sign]
+![No Entry Sign][no_entry]
 
-![alt text][stop_sign]
+![Stop Sign][stop_sign]
 
 My model had an easy time classifying NUMBER of the five signs.  To be fair, they were all cropped to look like the original images.
 
