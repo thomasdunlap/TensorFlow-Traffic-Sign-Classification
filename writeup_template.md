@@ -58,11 +58,11 @@ signs data set:
 
 #### Visualization of the Dataset.
 
-I used a bar chart to visualize the data set.
+I used a bar chart to visualize the data set:
 
 ![Bar Chart of Training Examples][bar_train]
 
-There is a wide variance in number of examples across the 43 types of signs. I also visualized a random image from the training set, to get a feel for what the images looked like:
+There is a wide variance in number of examples across the 43 types of signs, ranging from 200 examples to 2000. I also visualized a random image from the training set, to get a feel for what the images looked like:
 
 ![Random image of German Stop Sign][rand_stop]
 
@@ -70,23 +70,55 @@ There is a wide variance in number of examples across the 43 types of signs. I a
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
-If I was using a CPU I'd put Batch size lower, but working with AWS GPU I moved it up to 256.  A batch size of 256 allows for a more general
+#### Normalization
 
+Data preprocessing was done in several steps. I normalized the image data to 32-bit floating point images:
 
-I normalized the image data to 32 bit floating point images, because I wanted to eliminate the unnecessary variable of having the type of image influence the algorithm's learning process.
+`def norm32(X):
+    """
+    Normalize image and convert it to 32-bit floating point
+    """
+    norm = np.float32(128)
+    return (X.astype(np.float32) - norm) / norm
+`
 
-I decided to generate additional data because there was such great variance in the number of examples per label.  Labels with a small number of samples would be at high risk of overfitting.
-
-To help account for the greatly varying number of examples in each dataset,
-
-Here is an example of an original image and an augmented image:
+This makes sure all the image data has a mean of zero and equal variance, and eliminates the possibility of having data type of image influence the algorithm's learning process.  Here is a random image before and after normalization:
 
 ![random image][random_img_38] ![normed image][norm_38]
 
+#### Generating Additional Data
 
-The augmented dataset was rotated randomly between -20 and 20 degrees.  This is to ensure that the signs are different, but not too different from the originals.  These angles were generated based on a zero-centered Gaussian distribution, with a standard deviation of 10. Also, any angle that would have been more than a 20 degree change from the original was a assigned to 15 degrees (or -20 degrees if too negative).  This would a assure the majority of the augmented images would have smaller rotations, centered around zero.  
+I decided to generate additional data because there was such great variance in the number of examples per label (anywhere from 200 to 2000).  Labels with a small number of samples would be at high risk of overfitting. To rotate images, I used created the following function:
 
-I came to the conclusion of 20 degrees by trial an error.  20 was about the most rotation I found I could do before losing accuracy. I wanted to rotate the images as much as I could get away with to account for the varying angles a sign could be presented at.
+`# To be used in rotation of images
+import scipy.ndimage as scnd
+
+def rotate_image(img):
+    """
+    Rotate image by random angle from Gaussian distribution with a stddev of 7, centered at zero.
+    """
+
+    # Create angle from random Gausian distribution with a stddev of 7, centered at zero
+    angle = np.random.normal(0., 7.)
+
+    # Rotates pixel array, then essentially houses it inside larger scale blank pixel array
+    rotated_img = scnd.interpolation.rotate(img, angle)
+
+    # Rotation creates larger image; crop to 32x32:
+    margin = rotated_img.shape[0] - 32 # New rows minus original number of rows
+    start_crop = np.floor(margin / 2).astype(int) # Divide by 2 because edge added both sides
+    end_crop = start_crop + 32 # Will take 32 rows past bgn_zoomed
+    cropped_rotation_img = rotated_img[start_crop:end_crop, start_crop:end_crop, :] # Crop image
+
+    return cropped_rotation_img`
+
+This uses `scnd.interpolation.rotate(img, angle)` to rotate an image array a specificed number of degrees, and then essentiallyencases that rotated image inside the smallest black rectangle that will fit around it:  
+
+![A rotated image.][rotated_img]
+
+The new data was rotated based on an angle chosen randomly from a  Gaussian distribution centered at zero, with a standard deviation of 7 degrees.  This is to ensure that the majority of the additional images would be extremely similar to their originals, with a few larger rotations mixed in for variance and reducing the possibility of overfitting.
+
+If I was using a CPU I'd put Batch size lower, but working with AWS GPU I moved it up to 256.  A batch size of 256 allows for a more general
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
