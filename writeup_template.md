@@ -182,9 +182,8 @@ My final model results were:
 I chose the LeNet architecture, which had already been used to identify handwritten numbers. After I adjusted the parameters for color images instead of grayscale, the initial architecture would consistently get stuck at around 89% validation accuracy.  My first attempts of improving the accuracy was adding drop out layers.  This helped get the accuracy into the low 90's, but the biggest improvements seemed to come from adjusting the learning rate, and preprocessing the dataset.
 
 Because I was training 43 labels instead of just ten like LeNet was set up for, I increased the batch size, number of epochs, and reduced the learning rate.  My intuition was that for a human to learn 4 times the labels, you'd have to give it more information, and more time to learn it.  I assumed it would be similar for the neural net.
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+My training accuracy of 1.000, validation accuracy .962, and test accuracy of .951 indicate that the model model's accuracy translates well across different data sets, and is not just specifically fit to the set it was trained on.  Plus, it had a 100% accuracy on my new web images.
 
 ### Test a Model on New Images
 
@@ -202,11 +201,9 @@ Here are five German traffic signs that I found on the web:
 
 ![Stop Sign][stop_sign]
 
-My model had an easy time classifying NUMBER of the five signs.  To be fair, they were all cropped to look like the original images.
+My model had an easy time classifying five of the five signs.  To be fair, they were all cropped to look like the dataset images.  Images where the sign was rotated significantly or off-center were difficult for the model to classify.  Which makes sense, seeing as I did not train the model with those types of images.  
 
-Images where the sign was rotated significantly or off-center were difficult for the model to classify.  Which makes sense, seeing as I did not train the model with those types of images.  
-
-In the future, it would probably be helpful to have larger rotations and more obscured signs.
+In the future, it would probably be helpful to have larger rotations, more obscured signs, and signs that weren't centered in the image.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -221,13 +218,11 @@ Here are the results of the prediction:
 | Stop Sign			| Stop Sign     							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess five of the five traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of .951.  
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is certain that this is a 30 km/h sign (probability of 0.99770), and the image does contain a 30 km/h sign. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -239,7 +234,7 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 ![30 km/h softmax bar plot][30_bar]
 
-For the second image ...
+With the second image, the model is relatively sure that this is a 70 km/h sign (probability of 0.63859), and the image does contain a 70 km/h sign. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -251,7 +246,7 @@ For the second image ...
 
 ![70 km/h softmax bar plot][70_bar]
 
-For the third image ...
+In the third image, the model is absolutely certain that this is a right turn ahead sign (probability of 1.0), and the image does contain a right turn ahead sign. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -263,7 +258,7 @@ For the third image ...
 
 ![Right turn softmax bar plot][right_turn_bar]
 
-For the fourth image ...
+On the fourth image, the model is absolutely certain that this is a no entry sign (probability of 1.0), and the image does contain a no entry sign. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -275,7 +270,7 @@ For the fourth image ...
 
 ![No Entry softmax bar plot][no_entry_bar]
 
-For the fifth image ...
+Finally, for the fifth image, the model is certain that this is a stop sign (probability of 0.99999), and the image does contain a stop. The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
