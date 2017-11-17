@@ -74,13 +74,14 @@ There is a wide variance in number of examples across the 43 types of signs, ran
 
 Data preprocessing was done in several steps. I normalized the image data to 32-bit floating point images:
 
-`def norm32(X):
+```python
+def norm32(X):
     """
     Normalize image and convert it to 32-bit floating point
     """
     norm = np.float32(128)
     return (X.astype(np.float32) - norm) / norm
-`
+```
 
 This makes sure all the image data has a mean of zero and equal variance, and eliminates the possibility of having data type of image influence the algorithm's learning process.  Here is a random image before and after normalization:
 
@@ -90,7 +91,8 @@ This makes sure all the image data has a mean of zero and equal variance, and el
 
 I decided to generate additional data because there was such great variance in the number of examples per label (anywhere from 200 to 2000).  Labels with a small number of samples would be at high risk of overfitting. To rotate images, I used created the following function:
 
-`# To be used in rotation of images
+```python
+# To be used in rotation of images
 import scipy.ndimage as scnd
 
 def rotate_image(img):
@@ -110,7 +112,8 @@ def rotate_image(img):
     end_crop = start_crop + 32 # Will take 32 rows past bgn_zoomed
     cropped_rotation_img = rotated_img[start_crop:end_crop, start_crop:end_crop, :] # Crop image
 
-    return cropped_rotation_img`
+    return cropped_rotation_img
+```
 
 This uses `scnd.interpolation.rotate(img, angle)` to rotate an image array a specificed number of degrees, and then essentiallyencases that rotated image inside the smallest black rectangle that will fit around it:  
 
