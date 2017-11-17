@@ -192,15 +192,15 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
 
-![30 km/h softmax bar plot][30_bar]
 
-![70 km/h softmax bar plot][70_bar]
 
-![Right turn softmax bar plot][right_turn_bar]
 
-![No Entry softmax bar plot][no_entry_bar]
 
-![Stop sign softmax bar plot][stop_bar]
+
+
+
+
+
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
@@ -212,6 +212,7 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | .00050	      			| 50 km/h					 				|
 | .00003				    | 120 km/h      							|
 
+![30 km/h softmax bar plot][30_bar]
 
 For the second image ...
 
@@ -223,6 +224,7 @@ For the second image ...
 | .00156	      			| 80 km/h					 				|
 | .00090				    | 60 km/h      							|
 
+![70 km/h softmax bar plot][70_bar]
 
 For the third image ...
 
@@ -234,6 +236,7 @@ For the third image ...
 | 0	      			|  70 km/h					 				|
 | 0				    | Keep Left      							|
 
+![Right turn softmax bar plot][right_turn_bar]
 
 For the fourth image ...
 
@@ -242,9 +245,10 @@ For the fourth image ...
 | 1.0         			| No Entry   									|
 | 0     				|  No Passing									|
 | 0					| Stop Sign											|
-| 0	      			| No passing vehicles over 3.5 tons				 				|
+| 0	      			| No passing for vehicles over 3.5 tons				 				|
 | 0				    | Dangerous curve to the right     							|
 
+![No Entry softmax bar plot][no_entry_bar]
 
 For the fifth image ...
 
@@ -254,8 +258,9 @@ For the fifth image ...
 | .00000     				| Yield 										|
 | .00000					| 20 km/h									|
 | .00000	      			| 30 km/h					 				|
-| .00000				    | No passing vehicles over 3.5 tons     							|
+| .00000				    | No passing for vehicles over 3.5 tons     							|
 
+![Stop sign softmax bar plot][stop_bar]
 
 Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
 
