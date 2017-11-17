@@ -31,7 +31,7 @@ The goals of this project are:
 [70km_sign]: ./new_images/70km_sign.jpg "70 km/h Sign"
 [right_turn_ahead]: ./new_images/right_turn_ahead.jpg "Right Turn Ahead Sign"
 [stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
-[no_entry]: ./examples/Do-Not-Enter_Sign.jpg "No Entry Sign"
+[no_entry]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
