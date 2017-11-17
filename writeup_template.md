@@ -64,7 +64,7 @@ I used a bar chart to visualize the data set.
 
 There is a wide variance in number of examples across the 43 types of signs. I also visualized a random image from the training set, to get a feel for what the images looked like:
 
-![random image][random_img_38] ![normed image][norm_38]
+![Random image of German Stop Sign][rand_stop]
 
 ### Design and Test a Model Architecture
 
@@ -81,7 +81,8 @@ To help account for the greatly varying number of examples in each dataset,
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image2]  ![alt text][image3]
+![random image][random_img_38] ![normed image][norm_38]
+
 
 The augmented dataset was rotated randomly between -20 and 20 degrees.  This is to ensure that the signs are different, but not too different from the originals.  These angles were generated based on a zero-centered Gaussian distribution, with a standard deviation of 10. Also, any angle that would have been more than a 20 degree change from the original was a assigned to 15 degrees (or -20 degrees if too negative).  This would a assure the majority of the augmented images would have smaller rotations, centered around zero.  
 
