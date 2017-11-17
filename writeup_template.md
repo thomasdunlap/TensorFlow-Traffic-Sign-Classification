@@ -115,18 +115,17 @@ def rotate_image(img):
     return cropped_rotation_img
 ```
 
-This uses `scnd.interpolation.rotate(img, angle)` to rotate an image array a specificed number of degrees, and then essentiallyencases that rotated image inside the smallest black rectangle that will fit around it:  
+This uses `scnd.interpolation.rotate(img, angle)` to rotate an image array a specificed number of degrees, and then essentially encases that rotated image inside the smallest black rectangle that will fit around it:  
 
 ![A rotated image.][rotated_img]
 
-The new data was rotated based on an angle chosen randomly from a  Gaussian distribution centered at zero, with a standard deviation of 7 degrees.  This is to ensure that the majority of the additional images would be extremely similar to their originals, with a few larger rotations mixed in for variance and reducing the possibility of overfitting.
+The new data was rotated based on an angle chosen randomly from a  Gaussian distribution centered at zero, with a standard deviation of 7 degrees.  This is to ensure that the majority of the additional images would be extremely similar to their originals, with a few larger rotations mixed in for variance and reducing the possibility of overfitting.  This new set of rotated data was then concatenated into the total dataset:
 
-If I was using a CPU I'd put Batch size lower, but working with AWS GPU I moved it up to 256.  A batch size of 256 allows for a more general
-
+![Bar plot of data set after adding rotational images][bar_after_rot]
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-My final model consisted of the following layers:
+My final model added dropout layers to the LeNet architecture, and slightly adjusted that parameters for processing color images (LeNet is built for grayscale):
 
 | Layer         		|     Description	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -157,10 +156,21 @@ My final model consisted of the following layers:
 
 To train the model, I used the following hyperparameters:
 
-* Learing rate: .000933
+* Learning rate: .000933
 * Dropout/Keep Probability: .76
 * Epochs: 80
 * Batch size: 256
+* Optimizer: Adam
+
+My hunch was because LeNet was trained to identify 10 numbers, and we were using it to identify 43 signs, the learning rate would need to be smaller and the number of epochs would need to be larger in order to learn all the nuances. That said, this is my first Neural Network project, so most of my reasoning for things "trial and error."  For most hyperparameters I just guessed too low, then too high, until I reached a happy medium.  
+
+I experimented with a learning rate of .00033 for a long time, before returning closer to LeNet's rate of .001 (final rate was .000933). Why the "33" additions?  Honestly, because I think Andrew Ng suggested it, but I can neither find where he proposed that nor remember why he said it. But either way it worked, and as a personal aside, the extra specificity of my learning rate made me feel cooler for no good or rational reason.  
+
+My intuition for using a 256 batch size was that with a larger number of features, you would need a larger number of examples to better generalize the features.  I didn't end up noticing much difference in validation accuracy between a batch size of 128 and 256, but 256 was the only one where I ever could get 100% of my web signs identified.  If I was using my personal CPU I'd use a smaller batch size, but working with AWS GPU a batch size of 256 worked well.
+
+I choose the Adam optimizer because it was the most recommended optimizer after a brief web search.
+
+The dropout layers were added in to help keep the network from getting stuck by favoring one specific path.  I came to determine a dropout rate of .76 by trial and error. 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -182,8 +192,6 @@ If a well known architecture was chosen:
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
 I choose to use a slightly modified LeNet architecture. LeNet is an architecture I worked with in identifying handwritten numbers, and I thought it would translate well to identifying traffic signs.  The final model accuracy was !AN UNKNOWN NUMBER!, which suggests LeNet was a success.
-
-As far as some of the hyperparameters go, I just sort guessed to low, then too high, until I reached a happy medium.  My hunch was since LeNet was trained to identify 10 numbers, and we were using it to identify 43 signs, the learning rate would need to be smaller and the number of epochs would need to be larger.  This made sense since there are more nuances to learn, and there are no real time constraints on how long it takes the model to train except my own patience.  This would hopefully help keep our Adam optimizer from getting stuck before it reached a minima.  As I'd observe the updates with each epoch, I noticed the optimizer getting "stuck" around certain numbers, and I figured if there was more room to descend down the gradient, the algorithm might be overshooting due to a too-large learning rate.
 
 ### Test a Model on New Images
 
@@ -225,17 +233,6 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-
-
-
-
-
-
-
-
-
-
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
@@ -296,7 +293,3 @@ For the fifth image ...
 | .00000				    | No passing for vehicles over 3.5 tons     							|
 
 ![Stop sign softmax bar plot][stop_bar]
-
-Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
-
-The annoying thing about drawing from a random distribution is when you try to recreate it and its different each time! I guess that's what random seed is for, but holy mother swearing!!!
