@@ -230,7 +230,7 @@ For the third image ...
 |:---------------------:|:---------------------------------------------:|
 | 1.0         			| Right Turn Ahead  									|
 | 0     				| Roundabout Mandatory  										|
-| 0					| Vehicles over 3.5 metric tons prohibited									|
+| 0					| No vehicles over 3.5 metric tons									|
 | 0	      			|  70 km/h					 				|
 | 0				    | Keep Left      							|
 
@@ -242,7 +242,7 @@ For the fourth image ...
 | 1.0         			| No Entry   									|
 | 0     				|  No Passing									|
 | 0					| Stop Sign											|
-| 0	      			| No passing for vehicles over 3.5 metric tons				 				|
+| 0	      			| No passing vehicles over 3.5 tons				 				|
 | 0				    | Dangerous curve to the right     							|
 
 
@@ -254,7 +254,7 @@ For the fifth image ...
 | .00000     				| Yield 										|
 | .00000					| 20 km/h									|
 | .00000	      			| 30 km/h					 				|
-| .00000				    | No passing for vehicles over 3.5 metric tons     							|
+| .00000				    | No passing vehicles over 3.5 tons     							|
 
 
 Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
