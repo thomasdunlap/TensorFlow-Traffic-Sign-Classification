@@ -205,10 +205,10 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
 | .99770          			| 30 km/h   									|
-| .00120     				| 0 										|
-| .00053					| 3Yield											|
-| .00050	      			| 2Bumpy Road					 				|
-| .00003				    | 8Slippery Road      							|
+| .00120     				| 20 km/h 										|
+| .00053					| 60 km/h											|
+| .00050	      			| 50 km/h					 				|
+| .00003				    | 120 km/h      							|
 
 
 For the second image ...
@@ -217,31 +217,31 @@ For the second image ...
 |:---------------------:|:---------------------------------------------:|
 | .63859         			| 70 km/h  									|
 | .35192     				|  30 km/h										|
-| .00528					| 2Yield											|
-| .00156	      			| 5Bumpy Road					 				|
-| .00090				    | 3Slippery Road      							|
+| .00528					| 50 km/h											|
+| .00156	      			| 80 km/h					 				|
+| .00090				    | 60 km/h      							|
 
 
 For the third image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| 1.0         			| 33  									|
-| 0     				| 40  										|
-| 0					| 16Yield											|
-| 0	      			| 4Bumpy Road					 				|
-| 0				    | 39Slippery Road      							|
+| 1.0         			| Right Turn Ahead  									|
+| 0     				| Roundabout Mandatory  										|
+| 0					| Vehicles over 3.5 metric tons prohibited									|
+| 0	      			|  70 km/h					 				|
+| 0				    | Keep Left      							|
 
 
 For the fourth image ...
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| 1.0         			| 17   									|
-| 0     				|  	9									|
-| 0					| 14Yield											|
-| 0	      			| 10Bumpy Road					 				|
-| 0				    | 20Slippery Road      							|
+| 1.0         			| No Entry   									|
+| 0     				|  No Passing									|
+| 0					| Stop Sign											|
+| 0	      			| No passing for vehicles over 3.5 metric tons				 				|
+| 0				    | Dangerous curve to the right     							|
 
 
 For the fifth image ...
@@ -249,10 +249,10 @@ For the fifth image ...
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
 | .99999         			| Stop Sign  									|
-| .00000     				| 13 										|
-| .00000					| 0											|
+| .00000     				| Yield 										|
+| .00000					| 20 km/h									|
 | .00000	      			| 30 km/h					 				|
-| .00000				    | 10     							|
+| .00000				    | No passing for vehicles over 3.5 metric tons     							|
 
 
 Inititally I thought about adding noise to the image, but then I realized some of the normalized images already had noise, and felt like it was overkill.
