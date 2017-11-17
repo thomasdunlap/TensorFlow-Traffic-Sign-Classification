@@ -170,7 +170,7 @@ My intuition for using a 256 batch size was that with a larger number of feature
 
 I choose the Adam optimizer because it was the most recommended optimizer after a brief web search.
 
-The dropout layers were added in to help keep the network from getting stuck by favoring one specific path.  I came to determine a dropout rate of .76 by trial and error. 
+The dropout layers were added in to help keep the network from getting stuck by favoring one specific path.  I came to determine a dropout rate of .76 by trial and error.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
@@ -179,19 +179,12 @@ My final model results were:
 * validation set accuracy: .962
 * test set accuracy: .951
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
+I chose the LeNet architecture, which had already been used to identify handwritten numbers. After I adjusted the parameters for color images instead of grayscale, the initial architecture would consistently get stuck at around 89% validation accuracy.  My first attempts of improving the accuracy was adding drop out layers.  This helped get the accuracy into the low 90's, but the biggest improvements seemed to come from adjusting the learning rate, and preprocessing the dataset.
+
+Because I was training 43 labels instead of just ten like LeNet was set up for, I increased the batch size, number of epochs, and reduced the learning rate.  My intuition was that for a human to learn 4 times the labels, you'd have to give it more information, and more time to learn it.  I assumed it would be similar for the neural net.
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-
-I choose to use a slightly modified LeNet architecture. LeNet is an architecture I worked with in identifying handwritten numbers, and I thought it would translate well to identifying traffic signs.  The final model accuracy was !AN UNKNOWN NUMBER!, which suggests LeNet was a success.
 
 ### Test a Model on New Images
 
