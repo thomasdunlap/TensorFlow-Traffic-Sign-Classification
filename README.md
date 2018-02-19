@@ -160,11 +160,11 @@ To train the model, I used the following hyperparameters:
 * Batch size: 256
 * Optimizer: Adam
 
-My hunch was because LeNet was trained to identify 10 numbers, and we were using it to identify 43 signs, the learning rate would need to be smaller and the number of epochs would need to be larger in order to learn all the nuances. That said, this is my first Neural Network project, so most of my reasoning for things "trial and error."  For most hyperparameters I just guessed too low, then too high, until I reached a happy medium.  
+My hunch was because LeNet was trained to identify 10 numbers, and we were using it to identify 43 signs, the learning rate would need to be smaller and the number of epochs would need to be larger in order to learn all the nuances. That said, this is my first neural network project, so most of my reasoning for things is "trial and error."  For most hyperparameters I just guessed too low, then too high, and repeated that until I reached a happy medium.  
 
-I experimented with a learning rate of .00033 for a long time, before returning closer to LeNet's rate of .001 (final rate was .000933). Why the "33" additions?  Honestly, because I think Andrew Ng suggested it, but I can neither find where he proposed that nor remember why he said it. But either way it worked, and as a personal aside, the extra specificity of my learning rate made me feel cooler for no good or rational reason.  
+I experimented with a learning rate of .00033 for a long time, before returning closer to LeNet's rate of .001 (final rate was .000933). Why the "33" additions?  Honestly, because I think Andrew Ng suggested it, but I can neither find where he proposed that nor remember why he said it. But either way it worked.
 
-My intuition for using a 256 batch size was that with a larger number of features, you would need a larger number of examples to better generalize the features.  I didn't end up noticing much difference in validation accuracy between a batch size of 128 and 256, but 256 was the only one where I ever could get 100% of my web signs identified.  If I was using my personal CPU I'd use a smaller batch size, but working with AWS GPU a batch size of 256 worked well.
+My intuition for using a 256 batch size was that with a larger number of features, you would need a larger number of examples to better generalize the features.  I didn't end up noticing much difference in validation accuracy between a batch size of 128 and 256, but 256 was the only size where I ever could get 100% of my web signs identified.  If I was using my personal CPU I'd use a smaller batch size, but working with AWS GPU a batch size of 256 worked well.
 
 I choose the Adam optimizer because it was the most recommended optimizer after a brief web search.
 
@@ -199,9 +199,9 @@ Here are five German traffic signs that I found on the web:
 
 ![Stop Sign][stop_sign]
 
-My model had an easy time classifying five of the five signs.  To be fair, they were all cropped to look like the dataset images.  Images where the sign was rotated significantly or off-center were difficult for the model to classify.  Which makes sense, seeing as I did not train the model with those types of images.  
+My model was able to classify five of the five signs.  To be fair, they were all cropped to look like the dataset images.  Images where the sign was rotated significantly or off-center were difficult for the model to handle.  Which makes sense, seeing as I did not train the model with those types of images.  
 
-In the future, it would probably be helpful to have larger rotations, more obscured signs, and signs that weren't centered in the image.
+In the future, it would probably be helpful to have larger rotations, more obscured signs, signs that weren't centered in the image, add a sliding windows search, or potentially use a more flexible neural network architecture.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
