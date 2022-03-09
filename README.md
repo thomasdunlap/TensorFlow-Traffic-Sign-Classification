@@ -1,11 +1,10 @@
-# **Traffic Sign Recognition**
+# **Traffic Sign Classification**
 ![Normalized Image][norm_38] ![Stop Sign][rand_stop] ![Rotated Sign][rotated_img]
 
+![LeNet Architecture](./new_images/lenet.jpg)
 ---
 
-**Build a Traffic Sign Recognition Project**
-
-The goals of this project are:
+### Traffic Sign Classification Goals
 * Load, explore, summarize and visualize the German Traffic Sign dataset
 * Design, train and test LeNet architecture in TensorFlow
 * Use the model to make predictions on new images
@@ -34,7 +33,7 @@ The goals of this project are:
 
 Link to my [project code](https://github.com/thomasdunlap/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
-### Data Set Summary & Exploration
+## Data Set Summary & Exploration
 
 I used the pandas, numpy, and python to calculate summary statistics of the traffic
 signs data set:
@@ -45,7 +44,7 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3).
 * The number of unique classes/labels in the data set is 43.
 
-#### Visualization of the Dataset.
+#### Visualization of the Dataset
 
 I used a bar chart to visualize the data set:
 
@@ -108,7 +107,7 @@ The new data was rotated based on an angle chosen randomly from a  Gaussian dist
 
 ![Bar plot of data set after adding rotational images][bar_after_rot]
 
-### Design and Test a Model Architecture
+## Design a CNN Model Architecture
 
 My final model added dropout layers to the LeNet architecture, and slightly adjusted that parameters for processing color images (LeNet is built for grayscale):
 
@@ -172,8 +171,6 @@ My training accuracy of 1.000, validation accuracy .962, and test accuracy of .9
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
-
 Here are five German traffic signs that I found on the web:
 
 ![30km/h sign][30km_sign]
@@ -190,7 +187,7 @@ My model was able to classify five of the five signs.  To be fair, they were all
 
 In the future, it would probably be helpful to have larger rotations, more obscured signs, signs that weren't centered in the image, add a sliding windows search, or potentially use a more flexible neural network architecture.
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+## Predictions of Images Downloaded from the Internet
 
 Here are the results of the prediction:
 
@@ -204,8 +201,6 @@ Here are the results of the prediction:
 
 
 The model was able to correctly guess five of the five traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of .951.  
-
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 For the first image, the model is certain that this is a 30 km/h sign (probability of 0.99770), and the image does contain a 30 km/h sign. The top five soft max probabilities were:
 
