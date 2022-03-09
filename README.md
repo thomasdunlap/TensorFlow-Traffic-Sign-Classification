@@ -6,12 +6,11 @@
 **Build a Traffic Sign Recognition Project**
 
 The goals of this project are:
-* Load the data set (see below for links to the project data set)
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
+* Load, explore, summarize and visualize the German Traffic Sign dataset
+* Design, train and test LeNet architecture in TensorFlow
 * Use the model to make predictions on new images
 * Analyze the softmax probabilities of the new images
-* Summarize the results with a written report
+* Summarize the results
 
 
 [//]: # (Image References)
@@ -33,17 +32,9 @@ The goals of this project are:
 [stop_sign]: ./new_images/stop_sign.jpg "Stop Sign"
 [no_entry]: ./new_images/Do-Not-Enter_Sign.jpg "No Entry Sign"
 
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
-
----
-### README
-
-You're reading it! Here is a link to my [project code](https://github.com/thomasdunlap/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
+Link to my [project code](https://github.com/thomasdunlap/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb).
 
 ### Data Set Summary & Exploration
-
-#### Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy, and pandas methods rather than hardcoding results manually.
 
 I used the pandas, numpy, and python to calculate summary statistics of the traffic
 signs data set:
@@ -63,10 +54,6 @@ I used a bar chart to visualize the data set:
 There is a wide variance in number of examples across the 43 types of signs, ranging from 200 examples to 2000. I also visualized a random image from the training set, to get a feel for what the images looked like:
 
 ![Random image of German Stop Sign][rand_stop]
-
-### Design and Test a Model Architecture
-
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
 
 #### Normalization
 
@@ -121,7 +108,7 @@ The new data was rotated based on an angle chosen randomly from a  Gaussian dist
 
 ![Bar plot of data set after adding rotational images][bar_after_rot]
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+### Design and Test a Model Architecture
 
 My final model added dropout layers to the LeNet architecture, and slightly adjusted that parameters for processing color images (LeNet is built for grayscale):
 
@@ -150,7 +137,7 @@ My final model added dropout layers to the LeNet architecture, and slightly adju
 
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### Model Training
 
 To train the model, I used the following hyperparameters:
 
@@ -170,7 +157,7 @@ I choose the Adam optimizer because it was the most recommended optimizer after 
 
 The dropout layers were added in to help keep the network from getting stuck by favoring one specific path.  I came to determine a dropout rate of .76 by trial and error.
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Results
 
 My final model results were:
 * training set accuracy: 1.000
